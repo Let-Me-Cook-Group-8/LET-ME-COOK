@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="vi" dir="ltr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>LetMeCook | Nấu ăn thật phong cách</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>	
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Phudu:wght@300..900&display=swap');
+
+        body{
+            margin: 0;                                                                            
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-text-size-adjust: 100%;
+        }
+        /* HEADER */
+        #header{
+        padding: 0px;
+        display: grid;
+        grid-template-columns: 3fr 7fr ;
+    	margin: 0;
+    	padding: 0;
+    	background-color: black;  
+    	opacity: 0.8;  
+    	filter: alpha(opacity=80);
+    	height: 7vh;
+        }
+        .title {
+            font-size: 30px; 
+            font-family: 'Phudu';
+            text-align: center;
+        }
+        #top-left{
+            text-align: left; 
+            text-transform: uppercase;
+            padding-left: 5%;
+        }
+        #top-right{
+    	   align-items: center; 
+    	   justify-content: right;
+            display: flex;
+            vertical-align: middle;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+            padding-right: 5%;
+        }   
+        #nav {
+    	   display: inline-block;
+        }
+        .nav-link {
+            padding: 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-family: 'Phudu';
+        }
+        #home{
+        	height: 40vh;
+        	margin: 0;
+        	padding: 0;
+        }
+        #imagecover{
+        	position: absolute; 
+    	   top: 0%; 
+    	   left: 50%; 
+    	   z-index:-100; 
+    	   -webkit-transform: translateX(-50%); 
+    	   transform: translateX(-50%);
+    	   width: 100%; 
+    	   height: 60vh; 
+    	   object-fit: cover; 
+    	   background-color: transparent; 
+    	   opacity: 50%;
+        }
+        .messager {
+            display: table;
+            position: relative;
+            width: 100%;
+        }
+        .text {
+    	   top: 10vh;
+    	   align-items: center; 
+    	   justify-content: center;
+            display: flex;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+            font-size: 35px;
+            font-family: 'Phudu';
+            opacity: 60%;
+            font-weight: bold;
+            color: black;
+        }
+        /* CONTENT */
+        #about {
+            background-color: white;
+    	   position: relative;
+    	   height: 52.5vh;
+        }
+        .about2 {
+    	   position: absolute;
+        	top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr ;
+            grid-column-gap: 30px;
+            width: 80%;
+        }
+        #textabout{
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+        #title{
+            display: grid;
+            grid-template-columns: 3fr 3fr 3fr;
+        }
+        .recipe-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .recipe {
+            width: 30%;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .recipe img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .recipe h3 {
+            margin-top: 10px;
+        }
+
+
+        .divider {
+            height: 1px;
+            width: 100%;
+            background-color: #ccc;
+            margin: 0px 0;
+        }
+
+        
+
+        .recipe-grid h3 a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .recipe-grid h3 a:hover {
+            color: tomato;
+        }
+
+        .card-content {
+            text-align: center;
+            display: block;
+            flex-direction: column;
+            padding: 0;
+            flex-grow: 1;
+            order: 2;
+            width: 100%;
+            content: attr(data-content);
+
+        }
+        .imgrecipe{
+            width:30vw; 
+            height:30vh;
+            object-fit:contain;
+        }
+        .discribe{
+            font-family: "Lora";
+        }
+        .vertical-list {
+            align-items: center; 
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            font-weight: 400px;
+            overflow: initial;
+            background: 0 0;
+            padding: 40;
+            border: 0;
+        }
+
+        .card-title {
+            margin-bottom: 0.5rem;
+            display: inline-block;
+            margin-top: 0;
+            order: 1;
+            width: 100%;
+        }
+
+        a.vertical-list {
+            text-decoration: none;
+            color: #333;
+            margin-bottom: 30px;
+            margin-top: 30px;
+        }
+
+        .container {
+            width: 95%;
+            margin-right: auto;
+            margin-left: auto;
+            padding: 15px;
+        }
+        .image-container {
+            width: 15.5rem;
+            height: 10.3125rem;
+            margin-bottom: 2rem;
+        }
+
+        .card-title-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-top: 0;
+            color: #333;
+            font-family: "Lora";
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .card-title-text:hover {
+            text-decoration: 2px underline tomato;
+            
+        }
+           
+        /* FOOTER */
+        footer{
+            background-color: #eeee;
+            width: 100%;
+            
+        }
+        footer .footer-main{
+            padding-top: 15px;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            padding-left: 100px;
+        }
+        footer .footer-main .footer-tag{
+            text-align:left;
+        }
+        footer .footer-main .footer-tag h2{
+            color: black;
+            margin-bottom: 25px;
+            font-size: 30px;
+            border-left: 4px solid #fac031;
+            padding-left: 10px;
+        }
+        footer .footer-main .footer-tag p{
+            margin: 10px 0;
+        }
+        footer .footer-main .footer-tag i{
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        footer .footer-main .footer-tag i:hover{
+            color:#fac031
+        }
+        .cr-con{
+            background-color: #515054;
+            color: white;
+            text-align: center;
+        }
+        .footer-title{
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 0;
+            margin-top: 0;
+            color: #333;
+            font-family: "Phudu";
+            text-transform: uppercase;
+        }
+        .footer-discri {
+            font-family: "Lora";
+        }
+
+        *, :before, :after {
+            box-sizing: inherit;
+        }
+
+        div {
+                display: block;
+        }
+            
+
+        .wrapper {
+            background-color: black;
+            padding: 10px;
+            max-width: 100vw;
+            width: 100%;
+            position: relative;
+        }
+        .wrapper i {
+            top: 50%;
+            height: 50px;
+            width: 50px;
+            cursor: pointer;
+            font-size: 1.25rem;
+            position: absolute;
+            text-align: center;
+            line-height: 50px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+            transform: translateY(-50%);
+            transition: transform 0.1s linear;
+        }
+        .wrapper i:active{
+          transform: translateY(-50%) scale(0.85);
+        }
+        .wrapper i:first-child{
+          left: -22px;
+        }
+        .wrapper i:last-child{
+          right: -22px;
+        }
+        .wrapper .carousel{
+          display: grid;
+          grid-auto-flow: column;
+          grid-auto-columns: calc((100% / 5) - 3px);
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          gap: 16px;
+          border-radius: 8px;
+          scroll-behavior: smooth;
+          scrollbar-width: none;
+        }
+        .carousel::-webkit-scrollbar {
+          display: none;
+        }
+        .carousel.no-transition {
+          scroll-behavior: auto;
+        }
+        .carousel.dragging {
+          scroll-snap-type: none;
+          scroll-behavior: auto;
+        }
+        .carousel.dragging .food {
+          cursor: grab;
+          user-select: none;
+        }
+        .carousel :where(.food, .Image) {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .carousel .food {
+          scroll-snap-align: start;
+          height: 342px;
+          list-style: none;
+          background: #fff;
+          cursor: pointer;
+          padding-bottom: 15px;
+          flex-direction: column;
+          border-radius: 8px;
+        }
+
+        .food .Image {
+            position: relative;
+        }
+
+        img{
+            border: 0px;
+            overflow: hidden;
+            object-fit: cover;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .food.B::after{
+            border-radius: 8px;
+        }
+
+
+        .food .Title {
+            background: -moz-linear-gradient(top,rgba(0,0,0,0) 0,rgba(0,0,0,.65) 100%);
+            background: -webkit-linear-gradient(top,rgba(0,0,0,0) 0,rgba(0,0,0,.65) 100%);
+            background: linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,.65) 100%);
+        }
+
+        .food.B .Title {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            max-height: none;
+            padding: 100px 10px 10px;
+            
+            font-size: 2rem;
+            line-height: 1.2rem;
+            pointer-events: nonel;
+            color: white;
+            font-family: "Lora";
+            text-transform: uppercase;
+            text-align: center;
+
+        }
+
+        .food.B {
+            position: relative;
+            text-align: center;
+        }
+
+        .food.B:hover .Title {
+            opacity: 0;
+            visibility: hidden;
+
+        }
+
+        a {
+            background-color: transparent;
+            text-decoration: none;
+            color: #fff;
+            transition: .2s;
+        }
+
+        @media screen and (max-width: 900px) {
+          .wrapper .carousel {
+            grid-auto-columns: calc((100% / 2) - 9px);
+          }
+        }
+        @media screen and (max-width: 600px) {
+          .wrapper .carousel {
+            grid-auto-columns: 100%;
+          }
+        }
+
+        @font-face {
+            font-family: fontawesome;
+            src: url(../fonts/fontawesome-webfont.eot?v=4.6.3);
+            src: url(../fonts/fontawesome-webfont.eot?#iefix&v=4.6.3) format('embedded-opentype'),url(../fonts/fontawesome-webfont.woff?v=4.6.3) format('woff'),url(../fonts/fontawesome-webfont.ttf?v=4.6.3) format('truetype'),url(../fonts/fontawesome-webfont.svg?v=4.6.3#fontawesomeregular) format('svg');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .wrapper .align {
+            position: absolute;
+            left:-25px;
+        }
+
+        .fa {
+            display: inline-block;
+            font: normal normal normal 30px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .fa-angle-left
+        {
+            content:"\f104"
+        }
+
+        .fa-angle-right:before{content:"\f105"}
+    </style>
+
+    <script>
+        const wrapper = document.querySelector(".wrapper");
+        const carousel = document.querySelector(".carousel");
+        const firstfoodWidth = carousel.querySelector(".food").offsetWidth;
+        const arrowBtns = document.querySelectorAll(".wrapper i");
+        const carouselChildrens = [...carousel.children];
+        let isDragging = false, isAutoPlay = true, startX, startScrollLeft, timeoutId;
+
+        let foodPerView = Math.round(carousel.offsetWidth / firstfoodWidth);
+
+        carouselChildrens.slice(-foodPerView).reverse().forEach(food => {
+            carousel.insertAdjacentHTML("afterbegin", food.outerHTML);
+        });
+
+        carouselChildrens.slice(0, foodPerView).forEach(food => {
+            carousel.insertAdjacentHTML("beforeend", food.outerHTML);
+        });
+
+        carousel.classList.add("no-transition");
+        carousel.scrollLeft = carousel.offsetWidth;
+        carousel.classList.remove("no-transition");
+        // Add event listeners for the arrow buttons to scroll the carousel left and right
+        arrowBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                carousel.scrollLeft += btn.id == "left" ? -firstfoodWidth : firstfoodWidth;
+            });
+        });
+        const dragStart = (e) => {
+            isDragging = true;
+            carousel.classList.add("dragging");
+            // Records the initial cursor and scroll position of the carousel
+            startX = e.pageX;
+            startScrollLeft = carousel.scrollLeft;
+        }
+        const dragging = (e) => {
+            if(!isDragging) return; // if isDragging is false return from here
+            // Updates the scroll position of the carousel based on the cursor movement
+            carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
+        }
+        const dragStop = () => {
+            isDragging = false;
+            carousel.classList.remove("dragging");
+        }
+        const infiniteScroll = () => {
+            // If the carousel is at the beginning, scroll to the end
+            if(carousel.scrollLeft === 0) {
+                carousel.classList.add("no-transition");
+                carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
+                carousel.classList.remove("no-transition");
+            }
+            // If the carousel is at the end, scroll to the beginning
+            else if(Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth) {
+                carousel.classList.add("no-transition");
+                carousel.scrollLeft = carousel.offsetWidth;
+                carousel.classList.remove("no-transition");
+            }
+            // Clear existing timeout & start autoplay if mouse is not hovering over carousel
+            clearTimeout(timeoutId);
+            if(!wrapper.matches(":hover")) autoPlay();
+        }   
+        const autoPlay = () => {
+            if(window.innerWidth < 800 || !isAutoPlay) return; // Return if window is smaller than 800 or isAutoPlay is false
+            // Autoplay the carousel after every 2500 ms
+            timeoutId = setTimeout(() => carousel.scrollLeft += firstfoodWidth, 2500);
+        }
+        autoPlay();
+        carousel.addEventListener("mousedown", dragStart);
+        carousel.addEventListener("mousemove", dragging);
+        document.addEventListener("mouseup", dragStop);
+        carousel.addEventListener("scroll", infiniteScroll);
+        wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
+        wrapper.addEventListener("mouseleave", autoPlay);
+    </script>
+</head>
+
+<body>
+    <header> 
+		<div id="header">
+			<div id="top-left">
+				<a href="" id="logo" >
+					<img src="./assets/Letmecook.png" style="height: 7vh; ">
+				</a>
+			</div>
+
+			<div id="top-right">
+				<div id="nav">
+					<a class="nav-link" href="#">Trang Chủ</a>
+					<a class="nav-link" href="#about">Giới thiệu</a>
+					<a class="nav-link" href="#vertical-list">Danh mục</a>
+					<a class="nav-link" href="#main-content">Nổi bật</a>
+					<a class="nav-link" href="trangsearch">Tìm kiếm</a>
+					<a class="nav-link" href="#contact">Liên hệ</a>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main> 
+		<section id=home>
+			<img id="imagecover" src="./assets/imagecover.jpeg">
+			<div class="messager">
+				<div class="text">
+					<h1>Let me cook</h1>
+				</div>
+			</div>
+		</section>
+		<section id="about">
+			<div class="about2">
+				<div id="imgabout">
+					<img src="./assets/intro.jpeg" style="height:40vh; object-fit:contain;">
+				</div>
+				<div id="textabout"> 
+					<h2 class="title">GIỚI THIỆU</h2>
+					<p class="discribe">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac elit sem. Suspendisse nisi lorem, vehicula id pellentesque in, sagittis eget augue. Nam venenatis libero elit, sed elementum tellus ullamcorper vel. Maecenas faucibus libero vitae orci hendrerit fermentum. Donec sit amet lectus mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac elit sem. Suspendisse nisi lorem, vehicula id pellentesque in, sagittis eget augue. Nam venenatis libero elit, sed elementum tellus ullamcorper vel. Maecenas faucibus libero vitae orci hendrerit fermentum. Donec sit amet lectus mi.</p> 
+				</div>
+			</div>
+		</section>
+        <div class="divider"></div>
+        <section id="vertical-list" >
+            <div class="container">
+                <h2 class="title">DANH MỤC</h2>
+                <div id="title">
+                    <a href="" class="vertical-list">
+                        <div class="card-top">
+                            <div class="image-container">
+                                <div class="image-holder" style="padding-bottom: 66.5%;">
+                                    <img src="./assets/MonChinh.png" alt="" width="248" height="165">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title">
+                                <span class="card-title-text">MÓN CHÍNH</span>
+                            </span>
+                        </div>
+                    </a>
+                    <a href="" class="vertical-list">
+                        <div class="card-top">
+                            <div class="image-container">
+                                <div class="image-holder" style="padding-bottom: 66.5%;">
+                                    <img src="./assets/TrangMieng.jpg" alt="" width="248" height="165">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title">
+                                <span class="card-title-text">TRÁNG MIỆNG</span>
+                            </span>
+                        </div>
+                    </a>
+                    <a href="" class="vertical-list">
+                        <div class="card-top">
+                            <div class="image-container">
+                                <div class="image-holder" style="padding-bottom: 66.5%;">
+                                    <img src="./assets/AnVat.jpg" alt="" width="248" height="165">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title">
+                                <span class="card-title-text">ĂN VẶT</span>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <div class="divider"></div>
+
+
+        <section class="wrapper">
+            <ul class="carousel">
+                <li class="food B">
+                    <a href="">
+                    <img width="300px" height="400px" src="https://cdn.tgdd.vn/Files/2018/12/13/1137914/cach-nau-bo-kho-tai-nha-bang-goi-gia-vi-bo-kho-don-gian-ngon-dung-dieu-202107211101519924.jpg" alt="img" draggable="false">
+                    <div class="Title">Bò kho</div>
+                    </a>
+                </li>
+
+                <li class="food B">
+                    <a href="">
+                    <div class="Image">
+                    <img width="300px" height="400px" src="https://pandafood.com.vn/wp-content/uploads/2019/08/tom-ram-man-1.jpg" alt="img" draggable="false">
+                    </div>
+                    <div class="Title">Tôm Ram</div>
+                    </a>
+                </li>
+
+                <li class="food B">
+                    <a href="">
+                        <div class="Image">
+                        <img width="300px" height="400px" src="https://img-global.cpcdn.com/recipes/376446af6ee515ff/1200x630cq70/photo.jpg" alt="img" draggable="false">
+                        </div>
+                        <div class="Title">Apple Pie</div>
+                    </a>
+                </li>
+        
+                <li class="food B">
+                    <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fvnexpress.net%2Fca-kho-mang-thom-ngon-nhu-nha-hang-4486717.html&psig=AOvVaw1GkCMc4ToINm5XVp634xA4&ust=1710297482508000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCMDa--DY7YQDFQAAAAAdAAAAABAJ">
+                        <div class="Image">
+                        <img width="300px" height="400px" src="https://i-giadinh.vnecdn.net/2022/07/12/Thanh-pham-1-6512-1657601877.jpg" alt="img" draggable="false">
+                        </div>
+                        <div class="Title">Cá kho tộ</div>
+                    </a>
+                </li>
+
+                <li class="food B">
+                    <a href="">
+                        <div class="Image">
+                        <img width="300px" height="400px" src="https://cdn.tgdd.vn/Files/2019/01/07/1143169/cach-nau-thit-kho-tau-trung-cut-thom-ngon-thit-mem-dam-da-202401091518527882.jpg" alt="img" draggable="false">
+                        </div>
+                        <div class="Title">Thịt kho tàu</div>
+                    </a>
+                </li>
+
+                <li class="food B">
+                    <a href="">
+                        <div class="Image">
+                        <img width="300px" height="400px" src="https://www.vinmec.com/s3-images/20210317_143609_055773_sushi.max-800x800.jpg" alt="img" draggable="false">
+                        </div>
+                        <div class="Title">Sushi</div>
+                    </a>
+                </li>
+
+            </ul>
+            <i id="left" class="align fa-solid fa-angle-left"></i>
+            <i id="right" class="fa-solid fa-angle-right"></i>
+        </section>
+
+
+        <section id="main-content">
+            <div class="container border-bottom">
+                <h2 class="title">CÔNG THỨC NỔI BẬT</h2>
+                <div class="recipe-grid">
+                    <div class="recipe">
+                        <img src="./assets/Pho.jpg" alt="Pho" class="imgrecipe">
+                        <h3 class="card-title-text"><a href="./Pho-Recipe.html">Phở</a></h3>
+                        <p class="discribe">Phở là một món ăn truyền thống của Việt Nam, nổi tiếng và được yêu thích trên toàn thế giới. Được chế biến từ những sợi bánh phở mềm mịn, nằm trong nồi nước dùng thơm ngon và được thêm các loại thịt, gia vị tùy thích. Món phở kết hợp với rau sống tươi mát, hành, ngò và chanh tạo nên một hương vị độc đáo và hấp dẫn. Phở không chỉ là một món ăn ngon mà còn mang trong mình cả một nét văn hóa đậm đà của người Việt. Từ xe phở lưu động đến những quán phở nổi tiếng, nó đã trở thành một biểu tượng ẩm thực không thể thiếu khi đến Việt Nam.</p>
+                    </div>
+                    <div class="recipe">
+                        <img src="./assets/Banh-Trang-Nuong.jpg" alt="Banh-Trang-Nuong" class="imgrecipe">
+                        <h3 class="card-title-text"><a href="">Bánh tráng nướng</a></h3>
+                        <p class="discribe">Bánh tráng nướng là một món ăn đường phố phổ biến và hấp dẫn của Việt Nam. Được làm từ một lớp bánh tráng mỏng như giấy, được thoa đều với một hỗn hợp gia vị đặc trưng và nướng trên lửa than nhanh chóng. Món bánh tráng nướng thường được chế biến với các loại nhân như trứng gà, chả lụa, tôm khô, hành tây, và các loại gia vị khác tùy theo khẩu vị. Hương vị của bánh tráng nướng là sự kết hợp hoàn hảo giữa sự giòn tan của bánh tráng, hương thơm của gia vị và độ ngọt mặn của nhân.</p>
+                    </div>
+                    <div class="recipe">
+                        <img src="./assets/Banh-Mi.jpg" alt="Banh-Mi" class="imgrecipe">
+                        <h3 class="card-title-text"><a href="">Bánh mì</a></h3>
+                        <p class="discribe">Bánh mì là một món ăn đặc trưng và rất phổ biến của Việt Nam. Món này được làm từ một ổ bánh mì nóng hổi, với vỏ ngoài giòn tan và bên trong mềm mịn. Bánh mì Việt Nam thường được chế biến với nhiều loại nhân như thịt heo, gà, xúc xích, pate, trứng, rau sống, và gia vị như hành, ngò, tương ớt, và sốt mayonnaise. Hương vị của bánh mì Việt Nam là sự kết hợp hài hòa giữa vị ngọt, mặn và chua, tạo nên một trải nghiệm ẩm thực độc đáo. Bánh mì Việt Nam không chỉ là một món ăn thường ngày mà còn được xem là một biểu tượng ẩm thực của nước ta.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="devider"></div>
+    </main>
+
+    
+	<footer id="contact">
+        <div class="footer-main">
+            <div class="footer-tag">
+                <h2 class="footer-title">Top Food</h2>
+                <p class="footer-discri">Bún bò</p>
+                <p class="footer-discri">Bò kho</p>
+                <p class="footer-discri">Trứng chiên</p>
+                <p class="footer-discri">Giả cầy</p>
+            </div>
+
+            <div class="footer-tag">
+                <h2 class="footer-title">Liên kết</h2>
+                <p class="footer-discri">Trang chủ</p>
+                <p class="footer-discri">Giới thiệu</p>
+                <p class="footer-discri">Menu</p>
+                <p class="footer-discri">Tìm kiếm</p>
+                <p class="footer-discri">Blog</p>
+            </div>
+            <div class="footer-tag">
+                <h2 class="footer-title">Liên hệ</h2>
+                <p class="footer-discri">01237456788</p>
+                <p class="footer-discri">03456234567</p>
+                <p class="footer-discri">letmecook1122@gmail.com</p>
+                <p class="footer-discri">webnhom8123@gmail.com</p>
+            </div>
+            <div class="footer-tag">
+                <h2 class="footer-title">Theo dõi</h2>
+                <i class="fa-brands fa-square-facebook"></i>
+                <i class="fa-brands fa-square-instagram"></i>
+                <i class="fa-brands fa-square-twitter"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+        </div>
+        
+
+    </footer>
+    <div class="cr-con">
+            <span>A project by</span> | Group 8
+    </div>
+</body>
+</html>

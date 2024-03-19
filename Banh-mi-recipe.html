@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bánh mì - công thức làm bánh mì Việt Nam</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Bánh mì - công thức làm bánh mì Việt Nam</h1><br>
+        <li><a href="index.html">Trang chủ</a></li>
+    </header>
+
+    <nav>
+        <div class="boxcontent-index">
+            <ul>
+                <li><a href="#ingredients">Nguyên liệu</a></li>
+                <li><a href="#instructions">Các bước</a>
+                    <ul>
+                        <li><a href="#step1">Bước 1 Sơ chế nguyên liệu</a></li>
+                        <li><a href="#step2">Bước 2 Ướp thịt</a></li>
+                        <li><a href="#step3">Bước 3 Làm nước nhuộm da heo</a></li>
+                        <li><a href="#step4">Bước 4 Luộc da heo và trộn nhân</a></li>
+                        <li><a href="#step5">Bước 5 Bó thịt</a></li>
+                        <li><a href="#step6">Bước 6 Hấp thịt</a></li>
+                        <li><a href="#step7">Bước 7 Hoàn thành</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </div>
+                <p>
+                    <img src="assets/Banh-mi-anh-bia.jpg" alt="Bánh mì thịt nguội">
+                </p>
+    </nav>
+
+    <main>
+        <style>
+            header li {
+                display: inline;
+                margin-right: 10px;
+            }
+
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            header,
+            nav,
+            main,
+            footer {
+                padding: 20px;
+            }
+
+            .boxcontent-index {
+                display: block;
+                justify-content: space-between;
+                background-color: #f1fbff;
+            }
+
+            header {
+                background-color: #f2f2f2;
+            }
+
+            h1 {
+                color: #333;
+                margin: 0;
+            }
+
+            nav ul {
+                list-style:square;
+            }
+
+            #instructions li {
+                display: block;
+                margin-right: 10px;
+                text-align: -webkit-match-parent;
+            }
+
+            nav a {
+                text-decoration: none;
+                color: #333;
+            }
+
+            section {
+                margin-bottom: 30px;
+            }
+
+            h2 {
+                color: #333;
+            }
+
+            h3 {
+                color: #333;
+                display: block;
+                overflow: hidden;
+                font-weight: 600;
+                padding: 5px 0 10px;
+                position: relative;
+                line-height: 100%;
+                margin: 0;
+
+            }
+
+            ul {
+                margin-top: 0;
+                margin-bottom: 10px;
+            }
+
+            footer {
+                background-color: #f2f2f2;
+                text-align: center;
+                font-size: 12px;
+                color: #666;
+            }
+
+            .text-method {
+                margin-left: 20px;
+                display: block;
+                overflow: hidden;
+                margin: 0;
+                padding: 0;
+
+            }
+
+
+            .text-method .img-method img {
+                width: 50%;
+                height: auto;
+            }
+
+            .box-gallery {
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: -10px;
+                margin: 0;
+                padding: 0;
+            }
+
+            div {
+                display: block;
+            }
+
+            label {
+                float: left;
+                color: #333;
+                background: #ddd;
+                border-radius: 3px;
+                padding: 5px 10px;
+                margin-right: 10px;
+                font-size: 16px;
+                line-height: 24px;
+                cursor: default;
+                outline: 0;
+                display: block;
+
+            }
+
+            .box-gallery .img-method {
+                margin-top: 5px;
+                margin-bottom: 5px;
+                width: 60%;
+                margin-right: 5px;
+                float: left;
+                display: flex;
+            }
+
+            img {
+                overflow-clip-margin: content-box;
+                max-width: 100%;
+                margin-right: 10px;
+                border-radius: 2%;
+                margin-bottom: 10px;
+            }
+        </style>
+
+        <section id="ingredients">
+            <h2>Nguyên liệu</h2>
+            <ul>
+                <li>500g thịt heo đùi</li>
+                <li>500g da heo</li>
+                <li>300g giò sống</li>
+                <li>4 ổ bánh mì</li>
+                <li>1 quả dưa leo</li>
+                <li>300g hành lá</li>
+                <li>300g ngò rí</li>
+                <li>1 quả chanh</li>
+                <li>1 muỗng cà phê bột tỏi</li>
+                <li>1/2 muỗng cà phê bột quế</li>
+                <li>1/2 muỗng canh bột gấc</li>
+                <li>500g chả lụa</li>
+                <li>Gia vị: Muối, đường, bột ngọt, tiêu, hạt nêm, ớt</li>
+            </ul>
+        </section>
+
+        <section id="instructions">
+            <h2>Các bước</h2>
+            <ul>
+                <li>
+                    <label id="step1">1</label>
+                    <div class="text-method">
+                        <h3>Sơ chế nguyên liệu</h3>
+                        <p>Thịt heo mua về bạn mang đi rửa sạch với muối rồi mang đi trụng sơ với nước sôi khoảng 2
+                            phút. Tiếp đến, bạn xả sạch miếng thịt với nước lạnh rồi để ráo, cắt miếng vừa ăn.</p>
+                        <p>Về phần da heo, bạn nhúng da heo qua nước sôi khoảng 3 phút rồi dùng nhíp nhỏ cho sạch phần
+                            lông còn xót trên da. Dùng chanh và muối chà cho thật sạch rồi mang đi rửa với nước sạch, để
+                            ráo.</p>
+                        <div class="box-gallery">
+                            <div class="img-method">
+                                <img src="assets/Banh-mi-so-che-nguyen-lieu.jpg" alt="Sơ chế nguyên liệu"
+                                    style="width: 100%;">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <label id="step2">2</label>
+                    <div class="text-method">
+                        <h3>Ướp thịt</h3>
+                        <p>Sau khi cắt thịt đùi thành miếng vừa ăn, bạn mang đi ướp với 1 muỗng canh đường, 1 muỗng canh
+                            hạt nêm, 1 muỗng canh nước mắm, 1 muỗng cà phê muối, 1 muỗng cà phê tiêu, 1/2 muỗng cà phê
+                            bột ngọt, 1 muỗng cà phê bột tỏi, 1/2 muỗng cà phê bột quế rồi trộn đều và để trong 20 phút.
+                        </p>
+                        <div class="box-gallery">
+                            <div class="img-method ">
+                                <img src="assets/Banh-mi-uop-thit.jpg" alt="Sơ chế các nguyên liệu khác"
+                                    style="width: 100%;">
+                            </div>
+                        </div>
+                </li>
+                <li>
+                    <label id="step3">3</label>
+                    <div class="text-method">
+                        <h3>Làm nước nhuộm da heo</h3>
+                        <p>Để da heo có màu đẹp mắt, bạn trộn đều 1/2 muỗng canh bột gấc và 1 muỗng canh nước lọc, sau
+                            đó thoa đều nước nhuộm lên 300g da heo.</p>
+                        <div class="box-gallery">
+                            <div class="img-method">
+                                <img src="assets/Banh-mi-nuoc-nhuom.jpg" alt="Nướng bánh" style="width: 100%;">
+                            </div>
+                        </div>
+                </li>
+                <li>
+                    <label id="step4">4</label>
+                    <div class="text-method">
+                        <h3>Luộc da heo và trộn nhân</h3>
+                        <p>Lấy 200g da heo mang đi luộc trong 20 phút cho chín mền rồi vớt ra, để ráo nước rồi cắt sợi
+                            nhỏ.</p>
+                        <p>Cho da heo cắt sợi, thịt nạc cùng 300g giò sống, 1 muỗng canh tiêu sọ rang rồi dùng tay trộn
+                            đều.</p>
+                        <div class="box-gallery">
+                            <div class="img-method">
+                                <img src="assets/Banh-mi-luoc-da-heo.jpg" alt="hoàn thàn bánh tráng nướng"
+                                    style="width: 100%;">
+                            </div>
+                        </div>
+                </li>
+                <li>
+                    <label id="step5">5</label>
+                    <div class="text-method">
+                        <h3>Bó thịt</h3>
+                        <p>Chuẩn bị một cái mâm hay một cái khay rồi trải lên trên 1 miếng màng bọc thực phẩm. Tiếp đến
+                            bạn cho miếng da heo đã nhuộm lên rồi cho nhân đã trộn vào giữa.</p>
+                        <p>Bắt đầu cuộn thịt lại thật chặt tay bằng 3 - 4 lớp bọc thực phẩm ở cả chiều ngang rồi chiều
+                            dọc rồi dùng dây cước bó lại để cố định.</p>
+                        <div class="box-gallery">
+                            <div class="img-method">
+                                <img src="assets/Banh-mi-bo-thit.jpg" alt="hoàn thàn bánh tráng nướng"
+                                    style="width: 100%;">
+                            </div>
+                        </div>
+                </li>
+                <li>
+                    <label id="step6">6</label>
+                    <div class="text-method">
+                        <h3>Hấp thịt</h3>
+                        <p>Cho cuộn thịt vào xửng hấp, bạn hấp thịt trong khoảng 1 giờ 20 phút trên lửa vừa. Sau khi
+                            thịt chín đều thì bạn lấy ra, để nguội rồi cho vào ngăn mát tủ lạnh trong 5 tiếng rồi lấy
+                            ra, cắt lát mỏng.</p>
+                        <div class="box-gallery">
+                            <div class="img-method">
+                                <img src="assets/Banh-mi-hap-thit.jpg" alt="hoàn thàn bánh tráng nướng"
+                                    style="width: 100%;">
+                            </div>
+                        </div>
+                </li>
+                <li>
+                    <label id="step7">7</label>
+                    <div class="text-method">
+                        <h3>Hoàn thành</h3>
+                        <p>Bạn xẻ mở ổ bánh mì, dàn đều 1 muỗng cà phê bơ bánh mì, một muỗng pate heo, vài lát thịt
+                            nguội, vài miếng chả lụa, dưa leo xắt mỏng, hành lá và ngò rí cắt sợi, đồ chua, nước sốt rồi
+                            vài lát ớt tùy thích là có thể thưởng thức được rồi.</p>
+                        <div class="box-gallery">
+                            <div class="img-method">
+                                <img src="assets/Banh-mi-hoan-thanh.jpg" alt="hoàn thàn bánh tráng nướng"
+                                    style="width: 100%;">
+                            </div>
+                        </div>
+                </li>
+
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Bản quyền © 2023 - Trang web về công thức và các bước để nấu phở Việt Nam</p>
+    </footer>
+</body>
+
+</html>
