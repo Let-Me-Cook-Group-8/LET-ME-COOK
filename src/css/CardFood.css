@@ -1,0 +1,27 @@
+.cardFood {
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px rgb(185, 183, 183);
+    border-radius: 5px;
+}
+
+.cardFood .card-body img {
+
+    object-fit: cover;
+}
+
+.card-typeFood h3 {
+    cursor: pointer;
+    color: rgb(108, 106, 106);
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+
+.card-nameFood h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}

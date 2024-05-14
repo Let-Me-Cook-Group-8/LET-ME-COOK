@@ -1,0 +1,46 @@
+.filter {
+
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 30.66% 30.66% 30.66% 5%;
+    column-gap: 1%;
+    background-color: rgb(160, 160, 160);
+}
+
+.filter .item {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+
+}
+
+.filter .item select,
+.filter .item input,
+.filter .item button {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    font-size: 16px;
+    border-radius: 4px;
+    color: #39325A;
+    outline: none;
+    cursor: pointer;
+    background-color: #FFF;
+}
+
+.filter .item label {
+    display: block;
+    width: 40%;
+    padding: 0 10px;
+    font-size: 16px;
+}
+
+.gridContainer {
+    padding: 50px;
+    display: grid;
+    column-gap: 1%;
+    grid-template-columns: 19.2% 19.2% 19.2% 19.2% 19.2%;
+    row-gap: 10px;
+}
