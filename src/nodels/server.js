@@ -11,7 +11,6 @@ const db = mysql2.createConnection({
     host: 'localhost',
     user: 'root',
     password: '0329217749',
-    port: 3306,
     database: 'letmecook'
 
 });
@@ -29,22 +28,26 @@ app.get('/data', (req, res) => {
 //insert
 app.post('/data', (req, res) => {
     console.log(req.body);
-    var data = { username: req.body.username, email: req.body.email, _password: req.body._password }
-    var sql = "insert into admin set ?";
+    var data = {
+        recipe_id: req.body.recipe_id,
+        type_food: req.body.type_food,
+        name_food: req.body.name_food,
+        time_cook: req.body.time_cook,
+        image_url: req.body.image_url,
+        rating: req.body.rating,
+        main_ingredients: req.body.main_ingredients
+    };
+    var sql = "insert into congthuc set ?";
     db.query(sql, data, (err, kq) => {
         if (err) throw err;
         console.log(kq);
-        //gui kq cho react
         res.send({
             status: "them thanh cong",
-            admin_id: null,
-            username: req.body.username,
-            email: req.body.email,
-            _password: req.body._password
+            ...data
         });
-    })
-})
+    });
+});
 //chay
-app.listen(3000, '172.17.208.1', () => {
+app.listen(3000, '192.168.1.6', () => {
     console.log("server dang chay o cong 3000")
 })

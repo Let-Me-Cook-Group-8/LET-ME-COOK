@@ -10,7 +10,7 @@ import Search from './components/Searchpage.js'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './components/Login.js';
 import Register from './components/Register.js';
-
+import Addblog from './components/Addblog.js';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -22,6 +22,7 @@ root.render(
           <Route path="/search" element={<Search />} />
           <Route path='/login' element={<Login />} />
           <Route path='/Register' element={<Register />} />
+          <Route path='/Addblog' element={<Addblog />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -36,8 +36,7 @@ export default function Register() {
 
                         <input className="passwd" type="text" placeholder="Xác nhận mật khẩu" />
 
-                        <input id="sub" type="submit" value="Đăng ký" />
-
+                        <button type="submit">Đăng ký</button>
                     </div>
                 </div>
             </div>

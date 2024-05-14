@@ -38,56 +38,7 @@ export default function Content() {
                 </div>
             </section>
             <div class="divider"></div>
-            <section id="vertical-list">
-                <div class="container">
-                    <h2 class="title">DANH MỤC</h2>
-                    <div id="title">
-                        <a href="" class="vertical-list">
-                            <div class="card-top">
-                                <div class="image-container">
-                                    <div class="image-holder" style={{ paddingBottom: '66.5%' }}>
-                                        <img src={Monchinh} alt="" width="248" height="165" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title">
-                                    <span class="card-title-text">MÓN CHÍNH</span>
-                                </span>
-                            </div>
-                        </a>
-                        <a href="" class="vertical-list">
-                            <div class="card-top">
-                                <div class="image-container">
-                                    <div class="image-holder" style={{ paddingBottom: '66.5%' }}>
-                                        <img src={TrangMieng} alt="" width="248" height="165" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title">
-                                    <span class="card-title-text">TRÁNG MIỆNG</span>
-                                </span>
-                            </div>
-                        </a>
-                        <a href="" class="vertical-list">
-                            <div class="card-top">
-                                <div class="image-container">
-                                    <div class="image-holder" style={{ paddingBottom: '66.5%' }}>
-                                        <img src={AnVat} alt="" width="248" height="165" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title">
-                                    <span class="card-title-text">ĂN VẶT</span>
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </section>
-            <div class="divider"></div>
+
 
 
             <section class="wrapper">

@@ -17,11 +17,12 @@ export default function Header() {
                     <div id="nav">
                         <Link className="nav-link" to="/">Trang Chủ</Link>
                         <a className="nav-link" href="#about">Giới thiệu</a>
-                        <a className="nav-link" href="#vertical-list">Danh mục</a>
+
                         <a className="nav-link" href="#main-content">Nổi bật</a>
                         <Link className="nav-link" to="/search">Tìm kiếm</Link>
                         <a className="nav-link" href="#contact">Liên hệ</a>
                         <Link className="nav-link" to="/login">Đăng nhập</Link>
+                        <Link className="nav-link" to="/Addblog">Viết blog</Link>
                     </div>
                 </div>
             </div>
