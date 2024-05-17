@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import '../css/Addblog.css'
+
 export default function Addblog() {
     const [formData, setFormData] = useState({
         recipe_id: '',
@@ -18,6 +20,7 @@ export default function Addblog() {
             [name]: value
         });
     };
+     
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -37,7 +40,9 @@ export default function Addblog() {
     };
 
     return (
-        <div className="container">
+        <div className='addblog-body'>
+        <div className="addblog-container">
+            <h1>Đóng góp món ăn của bạn</h1>
             <form onSubmit={handleSubmit}>
                 <div className="row">
                     <div className="col-75">
@@ -120,6 +125,7 @@ export default function Addblog() {
                     <input type="submit" value="Submit" />
                 </div>
             </form>
+        </div>
         </div>
     );
 }
