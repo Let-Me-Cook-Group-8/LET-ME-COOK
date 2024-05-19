@@ -89,6 +89,7 @@
   background: dodgerblue;
   color: #fff;
   border: #fff;
+  cursor: pointer;
 }
 
 .addblog-container .row:hover [type="submit"] {

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import '../css/CardFood.css'
 const CardFood = ({ typeFood, nameFood, imgSrc }) => {
     return (
@@ -10,7 +11,8 @@ const CardFood = ({ typeFood, nameFood, imgSrc }) => {
                 <h3>{typeFood}</h3>
             </div>
             <div className='card-nameFood'>
-                <h2>{nameFood}</h2>
+                <Link to="/Main"><h2>{nameFood}</h2></Link>
+                
             </div>
         </div>
     )

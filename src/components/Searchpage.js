@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import CardFood from './CardFood';
 import '../css/Searchpage.css';
@@ -7,36 +7,40 @@ export default function Searchpage() {
     const [filteredData, setFilteredData] = useState([]);
     const [allData, setAllData] = useState([]);
 
-    const handleFilter = async (event) => {
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('http://192.168.1.4:3000/data');
+                const data = response.data;
+                setAllData(data);
+                setFilteredData(data); // Lọc dữ liệu mặc định là tất cả dữ liệu
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+
+        fetchData(); // Gọi hàm fetch dữ liệu ngay khi component được tạo ra
+    }, []); // Tham số thứ hai của useEffect là một mảng rỗng, đảm bảo hàm chỉ chạy một lần sau khi component được render
+
+    const handleFilter = (event) => {
         event.preventDefault();
 
         // Lấy dữ liệu từ các trường trong form
-        const time = event.target.elements.Thoigian.value;
-        const ingredient = event.target.elements.Thanhphan.value;
+        const time = parseInt(event.target.elements.Thoigian.value); // Chuyển đổi thời gian sang số nguyên
+        const ingredient = event.target.elements.Thanhphan.value.toLowerCase(); // Chuyển đổi thành phần thành chữ thường
         const search = event.target.elements.search.value.toLowerCase();
 
-        try {
-            // Gửi yêu cầu tới server để lấy tất cả dữ liệu
-            const response = await axios.get('http://192.168.1.6:3000/data');
-            const data = response.data;
+        // Lọc dữ liệu dựa trên các điều kiện
+        const filtered = allData.filter(food => {
+            const matchesTime = isNaN(time) || food.time_cook === time; // Kiểm tra nếu không chọn thời gian hoặc thời gian trùng khớp
+            const matchesIngredient = ingredient === '' || food.main_ingredients.toLowerCase().includes(ingredient); // Kiểm tra nếu không chọn thành phần hoặc thành phần trùng khớp
+            const matchesSearch = search === '' || food.name_food.toLowerCase().includes(search);
 
-            // Cập nhật tất cả dữ liệu vào state
-            setAllData(data);
+            return matchesTime && matchesIngredient && matchesSearch;
+        });
 
-            // Lọc dữ liệu dựa trên các điều kiện
-            const filtered = data.filter(food => {
-                const matchesTime = time === '' || food.time === parseInt(time);
-                const matchesIngredient = ingredient === '' || food.ingredient.toLowerCase().includes(ingredient.toLowerCase());
-                const matchesSearch = search === '' || food.name_food.toLowerCase().includes(search);
-
-                return matchesTime && matchesIngredient && matchesSearch;
-            });
-
-            // Cập nhật dữ liệu đã lọc vào state
-            setFilteredData(filtered);
-        } catch (error) {
-            console.error('Error fetching data:', error);
-        }
+        // Cập nhật dữ liệu đã lọc vào state
+        setFilteredData(filtered);
     };
 
     return (
