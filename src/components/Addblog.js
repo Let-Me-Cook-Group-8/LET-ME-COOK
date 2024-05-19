@@ -8,7 +8,8 @@ export default function Addblog() {
         time_cook: '',
         image_url: '',
         rating: '',
-        main_ingredients: ''
+        main_ingredients: '',
+        nguyenlieu: ''
     });
 
     const handleChange = (e) => {
@@ -57,7 +58,7 @@ export default function Addblog() {
                             <input
                                 type="text"
                                 name="name_food"
-                                placeholder="Name-food"
+                                placeholder="Tên món ăn"
                                 value={formData.name_food}
                                 onChange={handleChange}
                             />
@@ -68,7 +69,7 @@ export default function Addblog() {
                             <input
                                 type="text"
                                 name="time_cook"
-                                placeholder="Time-cook"
+                                placeholder="Thời gian nấu"
                                 value={formData.time_cook}
                                 onChange={handleChange}
                             />
@@ -101,8 +102,19 @@ export default function Addblog() {
                             <input
                                 type="text"
                                 name="main_ingredients"
-                                placeholder="Main-ingredients"
+                                placeholder="Nguyên liệu chính"
                                 value={formData.main_ingredients}
+                                onChange={handleChange}
+                            />
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-75">
+                            <input
+                                type="text"
+                                name="nguyenlieu"
+                                placeholder="Nguyên liệu"
+                                value={formData.nguyenlieu}
                                 onChange={handleChange}
                             />
                         </div>
