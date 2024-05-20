@@ -31,11 +31,20 @@
 
 ._namefood {
     padding: 50px 50px 10px;
+    font-size: 2em; /* Thay đổi kích thước font */
+    color: #333; /* Thay đổi màu chữ */
+    font-weight: bold; /* Thay đổi độ đậm của chữ */
+    text-align: left; /* Canh trái chữ */
 }
 
 ._typefood {
     padding-left: 50px;
+    font-size: 1.5em; /* Thay đổi kích thước font */
+    color: #666; /* Thay đổi màu chữ */
+    font-weight: normal; /* Đặt lại độ đậm của chữ */
+    text-align: left; /* Canh trái chữ */
 }
+
 
 .Iconconact {
     display: grid;
