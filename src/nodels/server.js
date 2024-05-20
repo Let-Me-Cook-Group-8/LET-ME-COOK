@@ -23,7 +23,7 @@ db.connect((err) => {
 });
 
 app.get('/data', (req, res) => {
-    var sql = "SELECT * FROM congthuc";
+    const sql = "SELECT * FROM congthuc";
     db.query(sql, (err, result) => {
         if (err) throw err;
         console.log(result);
@@ -31,10 +31,10 @@ app.get('/data', (req, res) => {
     });
 });
 
-app.get('/data/main', (req, res) => {
-    const { nameFood, typeFood, imgSrc } = req.query;
+app.get('/datamain', (req, res) => {
+    const { name_food } = req.query; // Chỉ lấy tham số name_food từ query
     const sql = "SELECT * FROM congthuc WHERE name_food=?";
-    const values = [nameFood];
+    const values = [name_food];
     db.query(sql, values, (err, result) => {
         if (err) {
             console.log("Lỗi truy vấn cơ sở dữ liệu: ", err);
@@ -46,10 +46,9 @@ app.get('/data/main', (req, res) => {
     });
 });
 
-
 app.post('/data', (req, res) => {
     console.log(req.body);
-    var data = {
+    const data = {
         type_food: req.body.type_food,
         name_food: req.body.name_food,
         time_cook: req.body.time_cook,
@@ -59,11 +58,8 @@ app.post('/data', (req, res) => {
         nguyenlieu: req.body.nguyenlieu
     };
 
-    // Constructing the SQL query with specific columns
-    var sql = "INSERT INTO congthuc (type_food, name_food, time_cook, image_url, rating, main_ingredients,nguyenlieu) VALUES (?, ?, ?, ?, ?, ?, ?)";
-    
-    // Extracting values in the same order as columns
-    var values = [
+    const sql = "INSERT INTO congthuc (type_food, name_food, time_cook, image_url, rating, main_ingredients, nguyenlieu) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    const values = [
         data.type_food,
         data.name_food,
         data.time_cook,
@@ -73,18 +69,16 @@ app.post('/data', (req, res) => {
         data.nguyenlieu
     ];
 
-    // Executing the query
     db.query(sql, values, (err, result) => {
         if (err) throw err;
         console.log(result);
         res.send({
-            status: "them thanh cong",
+            status: "Thêm thành công",
             ...data
         });
     });
 });
 
-// Start the server
-app.listen(3000, '192.168.1.4', () => {
+app.listen(3000, '192.168.1.6', () => {
     console.log("Server is running on port 3000");
 });

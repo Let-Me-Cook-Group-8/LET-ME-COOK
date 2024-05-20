@@ -8,9 +8,9 @@ export default function Searchpage() {
     const [allData, setAllData] = useState([]);
 
     useEffect(() => {
-        const fetchData = async () => {
+        const fetchData = async () => {// hàm không đồng bộ
             try {
-                const response = await axios.get('http://192.168.1.4:3000/data');
+                const response = await axios.get('http://192.168.1.6:3000/data');//lấy dữ liệu từ server
                 const data = response.data;
                 setAllData(data);
                 setFilteredData(data); // Lọc dữ liệu mặc định là tất cả dữ liệu

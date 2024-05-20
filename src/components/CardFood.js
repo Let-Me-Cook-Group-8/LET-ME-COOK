@@ -1,10 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '../css/CardFood.css';
 
 const CardFood = ({ typeFood, nameFood, imgSrc }) => {
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate('/main', {
+      state: {
+        typeFood: typeFood,
+        nameFood: nameFood,
+        imgSrc: imgSrc
+      }
+    });
+  };
+
   return (
-    <div className='cardFood'>
+    <div className='cardFood' onClick={handleCardClick}>
       <div className='card-body'>
         <img src={imgSrc} alt={nameFood} />
       </div>
@@ -12,18 +24,7 @@ const CardFood = ({ typeFood, nameFood, imgSrc }) => {
         <h3>{typeFood}</h3>
       </div>
       <div className='card-nameFood'>
-        {/* Chuyển hướng đến trang Main với typeFood và nameFood */}
-        <Link to={{
-        pathname: "/main",
-        state: {
-            typeFood: typeFood,
-            nameFood: nameFood,
-            imgSrc: imgSrc
-        }
-        }}>
-            <h2>{nameFood}</h2>
-        </Link>
-
+        <h2>{nameFood}</h2>
       </div>
     </div>
   );

@@ -11,34 +11,26 @@ const Main = () => {
   const { typeFood, nameFood, imgSrc } = location.state || {};
 
   const [ingredients, setIngredients] = useState([]);
-console.log('typeFood:', typeFood);
-console.log('nameFood:', nameFood);
-
-
-useEffect(() => {
-  const fetchData = async () => {
-    try {
-      const response = await axios.get('http://192.168.1.4:3000/data/main', {
-        params: {
-          name_food: nameFood,
-          typeFood: typeFood,
-          imgSrc: imgSrc
-        }
-      });
   
-      const data = response.data;
-      // Lưu trữ nguyên liệu và hướng dẫn từ dữ liệu nhận được
-      setIngredients(data.nguyenlieu);
-     
-    } catch (error) {
-      console.error('Error fetching recipe details:', error);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://192.168.1.6:3000/datamain', {
+          params: {
+            name_food: nameFood // Chỉnh lại tham số thành name_food cho khớp với server
+          }
+        });
+        const data = response.data;
+        setIngredients(data.nguyenlieu ? data.nguyenlieu.split('; ') : []); // Đảm bảo data.nguyenlieu được chuyển đổi thành mảng nếu cần
+      } catch (error) {
+        console.error('Error fetching recipe details:', error);
+      }
+    };
+
+    if (nameFood) {
+      fetchData();
     }
-  };
-  
-
-  fetchData();
-}, [typeFood, nameFood, imgSrc]);
-
+  }, [nameFood]);
 
   return (
     <div>
@@ -75,20 +67,18 @@ useEffect(() => {
         <div className='item3'>
           <h1>Nguyên liệu</h1>
           <ul>
-          {ingredients && ingredients.map((ingredient, index) => (
-  <li key={index}>{ingredient}</li>
-))}
-
+            {ingredients && ingredients.map((ingredient, index) => (
+              <li key={index}>{ingredient}</li>
+            ))}
           </ul>
         </div>
         <div className='item4'>
           <h1>Hướng dẫn</h1>
-          
         </div>
       </div>
       <Footer />
     </div>
   );
-}
+};
 
 export default Main;

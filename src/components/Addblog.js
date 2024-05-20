@@ -23,7 +23,7 @@ export default function Addblog() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://192.168.1.4:3000/data', {
+            const response = await fetch('http://192.168.1.6:3000/data', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
