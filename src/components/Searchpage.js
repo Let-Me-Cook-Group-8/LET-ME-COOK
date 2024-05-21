@@ -10,7 +10,7 @@ export default function Searchpage() {
     useEffect(() => {
         const fetchData = async () => {// hàm không đồng bộ
             try {
-                const response = await axios.get('http://127.0.0.1:3000/data');//lấy dữ liệu từ server
+                const response = await axios.get('http://127.0.0.1:3001/data');//lấy dữ liệu từ server
                 const data = response.data;
                 setAllData(data);
                 setFilteredData(data); // Lọc dữ liệu mặc định là tất cả dữ liệu

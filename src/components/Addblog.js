@@ -9,7 +9,8 @@ export default function Addblog() {
         image_url: '',
         rating: '',
         main_ingredients: '',
-        nguyenlieu: ''
+        nguyenlieu: '',
+        huongdan: ''
     });
 
     const handleChange = (e) => {
@@ -115,6 +116,17 @@ export default function Addblog() {
                                 name="nguyenlieu"
                                 placeholder="Nguyên liệu"
                                 value={formData.nguyenlieu}
+                                onChange={handleChange}
+                            />
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-75">
+                            <input
+                                type="text"
+                                name="huongdan"
+                                placeholder="Hướng dẫn"
+                                value={formData.huongdan}
                                 onChange={handleChange}
                             />
                         </div>

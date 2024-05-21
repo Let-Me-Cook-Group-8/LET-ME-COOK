@@ -55,7 +55,8 @@ app.post('/data', (req, res) => {
         image_url: req.body.image_url,
         rating: req.body.rating,
         main_ingredients: req.body.main_ingredients,
-        nguyenlieu: req.body.nguyenlieu
+        nguyenlieu: req.body.nguyenlieu,
+        huongdan: req.body.huongdan
     };
 
     const sql = "INSERT INTO congthuc (type_food, name_food, time_cook, image_url, rating, main_ingredients, nguyenlieu) VALUES (?, ?, ?, ?, ?, ?, ?)";
@@ -66,7 +67,8 @@ app.post('/data', (req, res) => {
         data.image_url,
         data.rating,
         data.main_ingredients,
-        data.nguyenlieu
+        data.nguyenlieu,
+        data.huongdan
     ];
 
     db.query(sql, values, (err, result) => {
@@ -110,6 +112,6 @@ app.get('/datauser', (req, res) => {
     });
 });
 
-app.listen(3000, '127.0.0.1', () => {
+app.listen(3001, '127.0.0.1', () => {
     console.log("Server is running ");
 });

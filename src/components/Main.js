@@ -11,17 +11,19 @@ const Main = () => {
   const { typeFood, nameFood, imgSrc } = location.state || {};
 
   const [ingredients, setIngredients] = useState([]);
+  const [huongdan,setHuongdan]=useState([]);
   
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:3000/datamain', {
+        const response = await axios.get('http://127.0.0.1:3001/datamain', {
           params: {
-            name_food: nameFood // Chỉnh lại tham số thành name_food cho khớp với server
+            name_food: nameFood 
           }
         });
         const data = response.data;
-        setIngredients(data.nguyenlieu ? data.nguyenlieu.split('; ') : []); // Đảm bảo data.nguyenlieu được chuyển đổi thành mảng nếu cần
+        setIngredients(data.nguyenlieu ? data.nguyenlieu.split('; ') : []);
+        setHuongdan(data.huongdan ? data.huongdan.split('; ') : []);
       } catch (error) {
         console.error('Error fetching recipe details:', error);
       }
@@ -74,6 +76,11 @@ const Main = () => {
         </div>
         <div className='item4'>
           <h1>Hướng dẫn</h1>
+          <ul>
+            {huongdan && huongdan.map((huongdans,index)=>(
+              <li key={index}>{huongdans}</li>
+            ))}
+          </ul>
         </div>
       </div>
       <Footer />
