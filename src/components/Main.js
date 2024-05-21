@@ -15,7 +15,7 @@ const Main = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://192.168.1.6:3000/datamain', {
+        const response = await axios.get('http://127.0.0.1:3000/datamain', {
           params: {
             name_food: nameFood // Chỉnh lại tham số thành name_food cho khớp với server
           }

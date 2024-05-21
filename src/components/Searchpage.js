@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import CardFood from './CardFood';
 import '../css/Searchpage.css';
-
+import Footer from './Footer';
 export default function Searchpage() {
     const [filteredData, setFilteredData] = useState([]);
     const [allData, setAllData] = useState([]);
@@ -10,7 +10,7 @@ export default function Searchpage() {
     useEffect(() => {
         const fetchData = async () => {// hàm không đồng bộ
             try {
-                const response = await axios.get('http://192.168.1.6:3000/data');//lấy dữ liệu từ server
+                const response = await axios.get('http://127.0.0.1:3000/data');//lấy dữ liệu từ server
                 const data = response.data;
                 setAllData(data);
                 setFilteredData(data); // Lọc dữ liệu mặc định là tất cả dữ liệu
@@ -85,6 +85,7 @@ export default function Searchpage() {
                     />
                 ))}
             </div>
+            <Footer/>
         </div>
     );
 }

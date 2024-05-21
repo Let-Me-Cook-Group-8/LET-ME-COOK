@@ -110,6 +110,6 @@ app.get('/datauser', (req, res) => {
     });
 });
 
-app.listen(3000, '192.168.1.6', () => {
-    console.log("Server is running on port 3000");
+app.listen(3000, '127.0.0.1', () => {
+    console.log("Server is running ");
 });

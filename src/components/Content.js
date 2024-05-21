@@ -27,35 +27,34 @@ export default function Content() {
                     </div>
                     <div id="textabout">
                         <h2 class="title">GIỚI THIỆU</h2>
-                        <p class="discribe">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac elit sem.
-                            Suspendisse nisi lorem, vehicula id pellentesque in, sagittis eget augue. Nam venenatis libero
-                            elit, sed elementum tellus ullamcorper vel. Maecenas faucibus libero vitae orci hendrerit
-                            fermentum. Donec sit amet lectus mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Morbi ac elit sem. Suspendisse nisi lorem, vehicula id pellentesque in, sagittis eget augue. Nam
-                            venenatis libero elit, sed elementum tellus ullamcorper vel. Maecenas faucibus libero vitae orci
-                            hendrerit fermentum. Donec sit amet lectus mi.</p>
+                        <p class="discribe">Chào mừng bạn đến với "Letmecook" - nơi chia sẻ niềm đam mê và tình yêu với ẩm thực. 
+                        Trang web này được tạo ra với mục tiêu mang đến cho bạn những công thức nấu ăn phong phú, dễ làm và hấp dẫn từ khắp nơi trên thế giới, 
+                        giúp bạn biến những bữa ăn hàng ngày trở nên đặc biệt và đầy màu sắc. Với thiết kế giao diện trực quan và thân thiện, Ẩm Thực Ngon giúp người dùng dễ dàng tìm kiếm 
+                        và lựa chọn công thức phù hợp với nhu cầu. Chức năng tìm kiếm thông minh cũng giúp bạn nhanh chóng tìm thấy công thức mình cần chỉ với vài từ khóa.</p>
                     </div>
                 </div>
-            </section>
+            </section>  
             <div class="divider"></div>
 
 
 
             <section class="wrapper">
                 <ul class="carousel">
-                    <li class="food B">
+                    <li class="food">
                         <a href="">
-                            <img width="300px" height="400px"
-                                src="https://cdn.tgdd.vn/Files/2018/12/13/1137914/cach-nau-bo-kho-tai-nha-bang-goi-gia-vi-bo-kho-don-gian-ngon-dung-dieu-202107211101519924.jpg"
-                                alt="img" draggable="false" />
+                            <div class="Image">
+                                <img 
+                                    src="https://cdn.tgdd.vn/Files/2018/12/13/1137914/cach-nau-bo-kho-tai-nha-bang-goi-gia-vi-bo-kho-don-gian-ngon-dung-dieu-202107211101519924.jpg"
+                                    alt="img" draggable="false" />
+                            </div>
                             <div class="Title">Bò kho</div>
                         </a>
                     </li>
 
-                    <li class="food B">
+                    <li class="food">
                         <a href="">
                             <div class="Image">
-                                <img width="300px" height="400px"
+                                <img 
                                     src="https://pandafood.com.vn/wp-content/uploads/2019/08/tom-ram-man-1.jpg" alt="img"
                                     draggable="false" />
                             </div>
@@ -63,10 +62,10 @@ export default function Content() {
                         </a>
                     </li>
 
-                    <li class="food B">
+                    <li class="food">
                         <a href="">
                             <div class="Image">
-                                <img width="300px" height="400px"
+                                <img 
                                     src="https://img-global.cpcdn.com/recipes/376446af6ee515ff/1200x630cq70/photo.jpg"
                                     alt="img" draggable="false" />
                             </div>
@@ -74,11 +73,11 @@ export default function Content() {
                         </a>
                     </li>
 
-                    <li class="food B">
+                    <li class="food">
                         <a
                             href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fvnexpress.net%2Fca-kho-mang-thom-ngon-nhu-nha-hang-4486717.html&psig=AOvVaw1GkCMc4ToINm5XVp634xA4&ust=1710297482508000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCMDa--DY7YQDFQAAAAAdAAAAABAJ">
                             <div class="Image">
-                                <img width="300px" height="400px"
+                                <img 
                                     src="https://i-giadinh.vnecdn.net/2022/07/12/Thanh-pham-1-6512-1657601877.jpg" alt="img"
                                     draggable="false" />
                             </div>
@@ -86,21 +85,22 @@ export default function Content() {
                         </a>
                     </li>
 
-                    <li class="food B">
+                    <li class="food">
                         <a href="">
                             <div class="Image">
-                                <img width="300px" height="400px"
+                                <img 
                                     src="https://cdn.tgdd.vn/Files/2019/01/07/1143169/cach-nau-thit-kho-tau-trung-cut-thom-ngon-thit-mem-dam-da-202401091518527882.jpg"
                                     alt="img" draggable="false" />
                             </div>
-                            <div class="Title">Thịt kho tàu</div>
+                            <div class="Title">Thịt Kho Tàu
+                            </div>
                         </a>
                     </li>
 
                     <li class="food B">
                         <a href="">
                             <div class="Image">
-                                <img width="300px" height="400px"
+                                <img 
                                     src="https://www.vinmec.com/s3-images/20210317_143609_055773_sushi.max-800x800.jpg"
                                     alt="img" draggable="false" />
                             </div>
