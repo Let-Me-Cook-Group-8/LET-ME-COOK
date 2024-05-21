@@ -78,6 +78,37 @@ app.post('/data', (req, res) => {
         });
     });
 });
+app.post('/datauser', (req, res) => {
+    console.log(req.body);
+    const data = {
+        username: req.body.username,
+        email: req.body.email,
+        _password: req.body._password
+    };
+    const sql = "INSERT INTO user (username,email,_password) VALUES (?, ?, ?)";
+    const values = [
+        data.username,
+        data.email,
+        data._password
+    ];
+    db.query(sql, values, (err, result) => {
+        if (err) throw err;
+        console.log(result);
+        res.send({
+            status: "Thêm thành công",
+            ...data
+        });
+    });
+});
+
+app.get('/datauser', (req, res) => {
+    const sql = "SELECT * FROM user";
+    db.query(sql, (err, result) => {
+        if (err) throw err;
+        console.log(result);
+        res.send(result);
+    });
+});
 
 app.listen(3000, '192.168.1.6', () => {
     console.log("Server is running on port 3000");
