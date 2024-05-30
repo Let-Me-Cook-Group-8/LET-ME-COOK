@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@600&display=swap");
+
+.addblog-body
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* background: linear-gradient(45deg, greenyellow, dodgerblue); */
+  background-image: url(/src/image/addblog-background-img.jpg) ;
+  background-size: cover;
+  font-family: "Sansita Swashed", cursive;
+}
+
+.addblog-container {
+  position: relative;
+  padding: 30px 30px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.addblog-container h1 
+{
+  font-size: 2em;
+  border-left: 5px solid dodgerblue;
+  padding: 10px;
+  color: #000;
+  letter-spacing: 5px;
+  margin-bottom: 60px;
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+.addblog-container form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.addblog-container .row {
+  position: relative;
+  width: 300px;
+  height: 50px;
+  margin-bottom: 5px;
+}
+
+.addblog-container .row input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border: 2px solid #000;
+  outline: none;
+  background: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1.2em;
+}
+.addblog-container .row:last-child {
+  margin-top: 20px;
+  right: -70px;
+}
+.addblog-container .row span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border: 2px solid #000;
+  outline: none;
+  background: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1.2em;
+}
+
+.addblog-container .row input:focus ~ span,
+.addblog-container .row input:valid ~ span {
+  transform: translateX(-13px) translateY(-35px);
+  font-size: 1em;
+}
+
+.addblog-container .row [type="submit"] {
+  width: 50%;
+  background: dodgerblue;
+  color: #fff;
+  border: #fff;
+  cursor: pointer;
+}
+
+.addblog-container .row:hover [type="submit"] {
+  background: linear-gradient(45deg, greenyellow, dodgerblue);
+}

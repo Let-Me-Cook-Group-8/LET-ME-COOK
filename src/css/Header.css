@@ -1,0 +1,46 @@
+/* HEADER */
+#header {
+    padding: 0px;
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    height: 7vh;
+}
+
+.title {
+    font-size: 30px;
+    font-family: 'Phudu';
+    text-align: center;
+}
+
+#top-left {
+    text-align: left;
+    text-transform: uppercase;
+    padding-left: 5%;
+}
+
+#top-right {
+    align-items: center;
+    justify-content: right;
+    display: flex;
+    vertical-align: middle;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    padding-right: 5%;
+}
+
+#nav {
+    display: inline-block;
+}
+
+.nav-link {
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'Phudu';
+}
