@@ -24,7 +24,7 @@ export default function Addblog() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://sql211.infinityfree.com:3000/data', {
+            const response = await fetch('http://127.0.0.1:3001/data', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

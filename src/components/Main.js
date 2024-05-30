@@ -23,7 +23,7 @@ const Main = () => {
         });
         const data = response.data;
         setIngredients(data.nguyenlieu ? data.nguyenlieu.split('; ') : []);
-        setHuongdan(data.huongdan ? data.huongdan.split('; ') : []);
+        setHuongdan(data.huongdan ? data.huongdan.split('\n') : []);
       } catch (error) {
         console.error('Error fetching recipe details:', error);
       }
@@ -79,10 +79,12 @@ const Main = () => {
           <ul>
             {huongdan && huongdan.map((huongdans,index)=>(
               <li key={index}>{huongdans}</li>
+              
             ))}
           </ul>
         </div>
       </div>
+      <div className='CC'></div>
       <Footer />
     </div>
   );
