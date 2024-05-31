@@ -6,8 +6,6 @@ footer {
 
 footer .footer-main {
     padding-top: 15px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
     padding-left: 100px;
 }
 
