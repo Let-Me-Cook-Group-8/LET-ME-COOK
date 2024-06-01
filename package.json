@@ -23,7 +23,6 @@
     "react-bootstrap-validation": "^0.1.11",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.23.1",
-    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -57,6 +56,7 @@
     "concurrently": "^8.2.2",
     "css-minimizer-webpack-plugin": "^7.0.0",
     "postcss": "^8.4.38",
+    "react-scripts": "^5.0.1",
     "stylelint": "^16.6.1",
     "stylelint-config-standard": "^36.0.0"
   }
