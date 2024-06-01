@@ -10,7 +10,7 @@
   align-items: center;
   height: 100vh;
 
-  background-image: url("../image/addblog-background-img.jpg") ;
+  background-image: url("..\/image\/addblog-background-img.jpg") ;
   background-size: cover;
   font-family: "Sansita Swashed", cursive;
 }
