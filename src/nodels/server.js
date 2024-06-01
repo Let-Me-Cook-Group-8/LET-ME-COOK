@@ -8,10 +8,11 @@ app.use(bodyParser.json()); // sử dụng để phân tích data json
 app.use(cors()); // sử dụng cors để truy cập từ nguồn dữ liệu khác nhau
 
 const db = mysql2.createConnection({
-    host: 'bbq4k8n05tn2djsslbhl-mysql.services.clever-cloud.com',
-    user: 'unvsljnhac1gdn5x',
-    password: '3dAjemsdo8vqltQUlrul',
-    database: 'bbq4k8n05tn2djsslbhl'
+    host: '127.0.0.1',
+    user: 'letmecook_group8',
+    password: '1L8cane980*',
+    database: 'letmecook',
+    port: 3306
 });
 
 db.connect((err) => {
