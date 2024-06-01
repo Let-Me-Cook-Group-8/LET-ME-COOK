@@ -1,16 +1,12 @@
 /* HEADER */
-#header {
-    padding: 0px;
-    display: grid;
-    grid-template-columns: 3fr 7fr;
-    margin: 0;
-    padding: 0;
-    background-color: black;
-    opacity: 0.8;
-    filter: alpha(opacity=80);
-    height: 7vh;
+@import url("https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@600&display=swap");
+.navbar-dark{
+    font-family: 'Sansita Swashed' !important;
+    text-transform: uppercase;
 }
-
+.bg-dark{
+    background-color: black !important;
+}
 .title {
     font-size: 30px;
     font-family: 'Phudu';
@@ -39,8 +35,46 @@
 
 .nav-link {
     padding: 20px;
-    color: white;
+    color: white !important;
     text-decoration: none;
     font-size: 18px;
     font-family: 'Phudu';
+}
+#mobile {
+    display: none;
+}
+#mobile i{
+    color: white;
+}
+
+@media screen and (max-width: 769px) {
+    #navbarResponsive{
+        align-items: flex-start;
+        justify-content: flex-start;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 65px;
+        right: -200px;
+        width: 200px;
+        height: 100hv;
+        background-color: black;
+        box-shadow: 0 40px 60px rgb(0, 0, 0, 0.1);
+        padding: 40px 0 0 60px;
+        transition: .3s ease-in-out;
+    }
+    #navbarResponsive.active{
+        right: 0px;
+    }
+    #navbarResponsive li{
+        margin-right: 50px;
+        margin-bottom: 20px;
+    }
+    #mobile {
+        display: block;
+    }
+    #mobile {
+        font-size: 20px;
+        cursor: pointer;
+    }
 }

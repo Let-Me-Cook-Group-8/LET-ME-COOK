@@ -37,3 +37,7 @@
 .card-nameFood h2 {
     margin:20px 10px;
 }
+.cardFood h2,
+.cardFood h3{
+    font-size: 23px;
+}

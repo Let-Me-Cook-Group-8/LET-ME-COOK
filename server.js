@@ -2,17 +2,16 @@ const express = require('express');
 const mysql2 = require('mysql2');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-
+require('dotenv').config();
 const app = express(); // tạo express
 app.use(bodyParser.json()); // sử dụng để phân tích data json
 app.use(cors()); // sử dụng cors để truy cập từ nguồn dữ liệu khác nhau
 
 const db = mysql2.createConnection({
-    host: '127.0.0.1',
-    user: 'letmecook_group8',
-    password: '1L8cane980*',
-    database: 'letmecook',
-    port: 3306
+    host: "bcnwonve9440dsjzln78-mysql.services.clever-cloud.com",
+    user: "u0fs2aeudfv7l8il",
+    password: "9BR9e3SW89j0iVelRcF0",
+    database: "bcnwonve9440dsjzln78"
 });
 
 db.connect((err) => {
