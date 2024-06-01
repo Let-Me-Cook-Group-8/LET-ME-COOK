@@ -4,7 +4,6 @@ import Letmecook from '../image/Letmecook.png';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-import { click } from '@testing-library/user-event/dist/click';
 
 //export default function Header() {
 class Header extends Component {
