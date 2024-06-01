@@ -31,18 +31,18 @@
 
 ._namefood {
     padding: 50px 50px 10px;
-    font-size: 2em; /* Thay đổi kích thước font */
-    color: #333; /* Thay đổi màu chữ */
-    font-weight: bold; /* Thay đổi độ đậm của chữ */
-    text-align: left; /* Canh trái chữ */
+    font-size: 2em; 
+    color: #333;
+    font-weight: bold; 
+    text-align: left; 
 }
 
 ._typefood {
     padding-left: 50px;
-    font-size: 1.5em; /* Thay đổi kích thước font */
-    color: #666; /* Thay đổi màu chữ */
-    font-weight: normal; /* Đặt lại độ đậm của chữ */
-    text-align: left; /* Canh trái chữ */
+    font-size: 1.5em; 
+    color: #666; 
+    font-weight: normal;
+    text-align: left; 
 }
 
 
@@ -70,8 +70,8 @@
 .Iconconact .Rate::after {
     content: '';
     position: absolute;
-    top: 10%;  /* Adjust as needed */
-    bottom: 10%;  /* Adjust as needed */
+    top: 10%; 
+    bottom: 10%;  
     right: 0;
     width: 1px;
     background-color: rgb(190, 188, 188);
@@ -87,7 +87,7 @@
 .Iconconact .Save {
     color: white;
     background-color: orangered;
-    border-top-left-radius: 5px;  /* Adjust the radius value as needed */
+    border-top-left-radius: 5px;  
     border-bottom-left-radius: 5px;
 }
 
@@ -107,7 +107,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px; /* Adjust as needed for spacing between icon and text */
+    gap: 8px; 
 }
 .item3 h1,
 .item3 ul,
